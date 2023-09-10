@@ -1,8 +1,12 @@
 import React from 'react'
+import {Grid,Typography,Paper} from '@mui/material'
 
 function VideoPlayer() {
   return (
-    <div>VideoPlayer</div>
+    <Grid>
+
+      
+    </Grid>
   )
 }
 
