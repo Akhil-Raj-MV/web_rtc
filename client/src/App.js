@@ -10,18 +10,16 @@ import Notifcations from './components/Notifications'
 function App() {
 
   return (
-    <div >
-        <AppBar position='static' color='inherit'>
-            <Typography variant='h2' align='center'>
-                VidSphere
-            </Typography>
-            <VideoPlayer/>
-            <Options>
-                <Notifcations/>
-            </Options>
-        </AppBar>
+    <div>
+      <AppBar position="static" color="inherit">
+        <Typography variant="h2" align="center">Video Chat</Typography>
+      </AppBar>
+      <VideoPlayer />
+      <Options>
+        <Notifcations />
+      </Options>
     </div>
-  )
+  );
 }
 
 export default App

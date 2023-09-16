@@ -3,16 +3,16 @@ import {Grid,Typography,Paper} from '@mui/material'
 
 import { SocketContext } from '../Context';
 
-function VideoPlayer() {
-
+const VideoPlayer = () => {
   const { name, callAccepted, myVideo, userVideo, callEnded, stream, call } = useContext(SocketContext);
+
   return (
-    <Grid container >
+    <Grid container>
       {stream && (
         <Paper>
           <Grid item xs={12} md={6}>
             <Typography variant="h5" gutterBottom>{name || 'Name'}</Typography>
-            <video playsInline muted ref={myVideo} autoPlay/>
+            <video playsInline muted ref={myVideo} autoPlay />
           </Grid>
         </Paper>
       )}
@@ -20,12 +20,13 @@ function VideoPlayer() {
         <Paper >
           <Grid item xs={12} md={6}>
             <Typography variant="h5" gutterBottom>{call.name || 'Name'}</Typography>
-            <video playsInline ref={userVideo} autoPlay/>
+            <video playsInline ref={userVideo} autoPlay />
           </Grid>
         </Paper>
       )}
     </Grid>
   );
-}
+};
+
 
 export default VideoPlayer
