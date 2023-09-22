@@ -1,26 +1,35 @@
-import React ,{useContext} from 'react'
-import {Grid,Typography,Paper} from '@mui/material'
+import React, { useContext } from 'react';
+import { Grid, Typography, Paper } from '@mui/material';
 
 import { SocketContext } from '../Context';
+
 
 const VideoPlayer = () => {
   const { name, callAccepted, myVideo, userVideo, callEnded, stream, call } = useContext(SocketContext);
 
+  // console.log("my" , myVideo)
+  // console.log("user" , userVideo)
+
+
   return (
-    <Grid container>
+    <Grid container style={{justifyContent: 'center',}}>
       {stream && (
-        <Paper>
+        <Paper style={{ padding: '10px',
+        border: '2px solid black',
+        margin: '10px',}}>
           <Grid item xs={12} md={6}>
             <Typography variant="h5" gutterBottom>{name || 'Name'}</Typography>
-            <video playsInline muted ref={myVideo} autoPlay />
+            <video playsInline muted ref={myVideo} autoPlay style={{width: '550px'}}/>
           </Grid>
         </Paper>
       )}
       {callAccepted && !callEnded && (
-        <Paper >
+        <Paper style={{ padding: '10px',
+        border: '2px solid black',
+        margin: '10px',}}>
           <Grid item xs={12} md={6}>
             <Typography variant="h5" gutterBottom>{call.name || 'Name'}</Typography>
-            <video playsInline ref={userVideo} autoPlay />
+            <video playsInline ref={userVideo} autoPlay style={{width: '550px'}} />
           </Grid>
         </Paper>
       )}
@@ -28,5 +37,4 @@ const VideoPlayer = () => {
   );
 };
 
-
-export default VideoPlayer
+export default VideoPlayer;
